@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\bin\Debug\net5.0\WiredBrainCoffee.StorageApp.exe
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\bin\Debug\net5.0\WiredBrainCoffee.StorageApp.deps.json
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\bin\Debug\net5.0\WiredBrainCoffee.StorageApp.runtimeconfig.json
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\bin\Debug\net5.0\WiredBrainCoffee.StorageApp.runtimeconfig.dev.json
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\bin\Debug\net5.0\WiredBrainCoffee.StorageApp.dll
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\bin\Debug\net5.0\ref\WiredBrainCoffee.StorageApp.dll
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\bin\Debug\net5.0\WiredBrainCoffee.StorageApp.pdb
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.AssemblyInfo.cs
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.dll
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\ref\WiredBrainCoffee.StorageApp.dll
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.pdb
+C:\Users\User\Desktop\Visual_Studio_Sample_Projects\WiredBrainCoffee.StorageApp\WiredBrainCoffee.StorageApp\obj\Debug\net5.0\WiredBrainCoffee.StorageApp.genruntimeconfig.cache
