@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dd6fc9a3-6cb6-4cf9-b54e-7c4e374fdf95": {
+      "ProjectGuid": "dd6fc9a3-6cb6-4cf9-b54e-7c4e374fdf95",
+      "DisplayName": "WiredBrainCoffee.StorageApp",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

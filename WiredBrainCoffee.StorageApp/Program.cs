@@ -1,4 +1,5 @@
 ﻿using System;
+using WiredBrainCoffee.StorageApp.Data;
 using WiredBrainCoffee.StorageApp.Entities;
 using WiredBrainCoffee.StorageApp.Repositories;
 
@@ -8,25 +9,25 @@ namespace WiredBrainCoffee.StorageApp
     {
         static void Main(string[] args)
         {
-            var employeeRepository = new GenericRepository<Employee>();
-            AddEmployees(employeeRepository);
-            GetEmpployeeById(employeeRepository);
+            var employeeRepository = new SqlRepository<Employee>(new StorageAppDbContext());
+            AddEmployees(employeeRepository); //error ListRepository not SqlRepository
+            GetEmpployeeById(employeeRepository); //error ListRepository not SqlRepository
            
 
-            var organizationRepository = new GenericRepository<Organization>();
+            var organizationRepository = new ListRepository<Organization>();
             AddOrganizations(organizationRepository);
 
             Console.ReadLine();
 
         }
 
-        private static void GetEmpployeeById(GenericRepository<Employee> employeeRepository)
+        private static void GetEmpployeeById(ListRepository<Employee> employeeRepository)
         {
             var employee = employeeRepository.GetById(2);
             Console.WriteLine($"Employee with Id 2: {employee.FirstName}");
         }
 
-        private static void AddEmployees(GenericRepository<Employee> employeeRepository)
+        private static void AddEmployees(ListRepository<Employee> employeeRepository)
         {
             employeeRepository.Add(new Employee { FirstName = "John" });
             employeeRepository.Add(new Employee { FirstName = "Gandalf" });
@@ -34,7 +35,7 @@ namespace WiredBrainCoffee.StorageApp
             employeeRepository.Save();
         }
 
-        private static void AddOrganizations(GenericRepository<Organization> organizationRepository)
+        private static void AddOrganizations(ListRepository<Organization> organizationRepository)
         {
             organizationRepository.Add(new Organization { Name = "Pluralsight" });
             organizationRepository.Add(new Organization { Name = "SomeCoffeeBeanPlace" });
