@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class SqlRepository<TItem> where TItem : class, IEntity
+    public class SqlRepository<TItem> : IRepository<TItem> where TItem : class, IEntity
 
     {
         private readonly DbContext _dbContext;
@@ -25,10 +24,10 @@ namespace WiredBrainCoffee.StorageApp.Repositories
 
         public void Add(TItem item)
         {
-            //item.Id=_dbSet.Count + 1;
-            item.Id = _dbSet.Any()
-                ? _dbSet.Max(item => item.Id) + 1
-                : 1;
+         //     item.Id = _dbSet.Count + 1;
+         //   item.Id = _dbSet.Any()
+         //       ? _dbSet.Max(item => item.Id) + 1
+         //       : 1;
             _dbSet.Add(item);
         }
 
