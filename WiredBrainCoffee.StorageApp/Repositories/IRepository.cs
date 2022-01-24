@@ -18,4 +18,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
         where T : IEntity
     {     
     }
+  //  public class GenericSuperRepository<T> : IRepository<T> where T : IEntity
+    
+      
 }
