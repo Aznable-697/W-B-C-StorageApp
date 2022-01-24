@@ -4,14 +4,22 @@ using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-  public  class GenericRepository<T>
+    public class GenericRepository<TItem>
     {
-       protected readonly List<T> _items = new ();
+           // To use set GenericRepository to <Items,TKey>
+       // public TKey? Key { get; set; }
 
-        public void Add(T item)
+        private readonly List<TItem> _items = new(); // protected to read commented area below*
+
+        public void Add(TItem item)
         {
             _items.Add(item);
-                    }
+        }
+
+        public void Remove(TItem item)
+        {
+            _items.Remove(item);
+        }
 
         public void Save()
         {
@@ -21,12 +29,13 @@ namespace WiredBrainCoffee.StorageApp.Repositories
             }
         }
     }
+    // just a class created to learn about Inheritance 
 
-    public class GenericRepositoryWithRemove<T> : GenericRepository<T>
-    {
-        public void Remove(T item)
-        {
-            _items.Remove(item);
-        }
-    }
+    //public class GenericRepositoryWithRemove<TItem> : GenericRepository<TItem,string>
+    // {
+    //     public void Remove(TItem item)
+    //    {
+    //       _items.Remove(item);
+    //     }
+    //  }
 }
