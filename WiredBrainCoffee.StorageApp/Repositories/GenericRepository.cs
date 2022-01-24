@@ -1,18 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class GenericRepository<TItem>
-    {
-           // To use set GenericRepository to <Items,TKey>
-       // public TKey? Key { get; set; }
+    public class GenericRepository<TItem> where TItem : EntityBase
 
-        private readonly List<TItem> _items = new(); // protected to read commented area below*
+    {
+        private readonly List<TItem> _items = new();
+
+        public TItem GetById(int id)
+        {
+            return _items.Single(item => item.Id == id);
+        }
 
         public void Add(TItem item)
         {
+            //item.Id=_items.Count + 1;
+            item.Id = _items.Any()
+                ? _items.Max(item => item.Id) + 1
+                : 1;
             _items.Add(item);
         }
 
@@ -29,13 +37,5 @@ namespace WiredBrainCoffee.StorageApp.Repositories
             }
         }
     }
-    // just a class created to learn about Inheritance 
 
-    //public class GenericRepositoryWithRemove<TItem> : GenericRepository<TItem,string>
-    // {
-    //     public void Remove(TItem item)
-    //    {
-    //       _items.Remove(item);
-    //     }
-    //  }
 }
