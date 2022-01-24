@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using WiredBrainCoffee.StorageApp.Entities;
@@ -20,7 +20,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
 
         public IEnumerable<T> GetAll()
         {
-            return _dbSet.ToList();
+            return _dbSet.OrderBy(item => item.Id).ToList();
         }
 
         public T GetById(int id)
@@ -30,7 +30,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
 
         public void Add(T item)
         {
-            _dbSet.Add(item);
+           _dbSet.Add(item);
         }
 
         public void Remove(T item)
@@ -40,10 +40,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
 
         public void Save()
         {
-            foreach (var item in _dbSet)
-            {
-                Console.WriteLine(item);
-            }
+            _dbContext.SaveChanges();
         }
     }
 

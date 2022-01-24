@@ -22,10 +22,10 @@ namespace WiredBrainCoffee.StorageApp.Repositories
 
         public void Add(T item)
         {
-            //item.Id=_items.Count + 1;
-            item.Id = _items.Any()
+          //  item.Id=_items.Count + 1;
+           item.Id = _items.Any()
                 ? _items.Max(item => item.Id) + 1
-                : 1;
+               : 1;
             _items.Add(item);
         }
 
@@ -36,10 +36,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
 
         public void Save()
         {
-            foreach (var item in _items)
-            {
-                Console.WriteLine(item);
-            }
+           // Everything is saved already in the List<T>
         }
 
        
