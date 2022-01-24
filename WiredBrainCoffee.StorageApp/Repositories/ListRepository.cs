@@ -5,17 +5,22 @@ using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class ListRepository<TItem> : IRepository<TItem> where TItem : IEntity
+    public class ListRepository<T> : IRepository<T> where T : IEntity
         
     {
-        private readonly List<TItem> _items = new();        
+        private readonly List<T> _items = new();
 
-        public TItem GetById(int id)
+        public IEnumerable<T> GetAll()
+        {
+            return _items.ToList();
+        }
+
+        public T GetById(int id)
         {
              return _items.Single(item => item.Id == id);           
         }
 
-        public void Add(TItem item)
+        public void Add(T item)
         {
             //item.Id=_items.Count + 1;
             item.Id = _items.Any()
@@ -24,7 +29,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
             _items.Add(item);
         }
 
-        public void Remove(TItem item)
+        public void Remove(T item)
         {
             _items.Remove(item);
         }
@@ -36,6 +41,8 @@ namespace WiredBrainCoffee.StorageApp.Repositories
                 Console.WriteLine(item);
             }
         }
+
+       
     }
 
 }

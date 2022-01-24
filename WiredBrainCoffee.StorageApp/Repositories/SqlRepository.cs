@@ -1,37 +1,39 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class SqlRepository<TItem> : IRepository<TItem> where TItem : class, IEntity
+    public class SqlRepository<T> : IRepository<T> where T : class, IEntity
 
     {
         private readonly DbContext _dbContext;
-        private readonly DbSet<TItem> _dbSet;
+        private readonly DbSet<T> _dbSet;
 
         public SqlRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TItem>();
+            _dbSet = _dbContext.Set<T>();
         }
 
-        public TItem GetById(int id)
+        public IEnumerable<T> GetAll()
+        {
+            return _dbSet.ToList();
+        }
+
+        public T GetById(int id)
         {
             return _dbSet.Find(id);
         }
 
-        public void Add(TItem item)
+        public void Add(T item)
         {
-         //     item.Id = _dbSet.Count + 1;
-         //   item.Id = _dbSet.Any()
-         //       ? _dbSet.Max(item => item.Id) + 1
-         //       : 1;
             _dbSet.Add(item);
         }
 
-        public void Remove(TItem item)
+        public void Remove(T item)
         {
             _dbSet.Remove(item);
         }
