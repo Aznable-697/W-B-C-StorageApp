@@ -25,7 +25,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
           //  item.Id=_items.Count + 1;
            item.Id = _items.Any()
                 ? _items.Max(item => item.Id) + 1
-               : 1;
+              : 1;
             _items.Add(item);
         }
 

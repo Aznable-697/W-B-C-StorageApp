@@ -10,6 +10,7 @@ namespace WiredBrainCoffee.StorageApp
         static void Main(string[] args)
         {
             var employeeRepository = new SqlRepository<Employee>(new StorageAppDbContext());
+
             AddEmployees(employeeRepository);
             AddManagers(employeeRepository);
             GetEmpployeeById(employeeRepository);
@@ -20,11 +21,12 @@ namespace WiredBrainCoffee.StorageApp
             AddOrganizations(organizationRepository);
             WriteAllToConsole(organizationRepository);
 
-            IReadRepository<object> repo = new ListRepository<Organization>();
-      
+           
+
             Console.ReadLine();
 
         }
+
 
         private static void AddManagers(IWriteRepository<Manager> managerRepository)
         {
@@ -51,31 +53,29 @@ namespace WiredBrainCoffee.StorageApp
 
         private static void AddEmployees(IRepository<Employee> employeeRepository)
         {
-            employeeRepository.Add(new Employee { FirstName = "John" });
-            employeeRepository.Add(new Employee { FirstName = "Gandalf" });
-            employeeRepository.Add(new Employee { FirstName = "Joey" });
-            employeeRepository.Save();
-        }
-
-        private static void AddOrganizations(IRepository<Organization> organizationRepository)
-        {
-            var organizations = new[]
+            var employees = new[]
             {
-                new Organization {Name = "Pliralsight"},
+                 new Employee { FirstName = "John"},
+                 new Employee { FirstName = "Gandalf"},
+                 new Employee { FirstName = "Joey"},
+            };
+
+            employeeRepository.AddBatch(employees);
+
+        }   
+
+    private static void AddOrganizations(IRepository<Organization> organizationRepository)
+    {
+        var organizations = new[]
+        {
+                new Organization { Name = "Pluralsight"},
                 new Organization { Name = "SomeCoffeeBeanPlace" },
                 new Organization { Name = "The Business" }
             };
-            AddBatch(organizationRepository, organizations);
-            
-        }
+        organizationRepository.AddBatch(organizations);
 
-        private static void AddBatch(IRepository<Organization> organizationRepository, Organization[] organizations)
-        {
-            foreach (var item in organizations)
-            {
-                organizationRepository.Add(item);
-            }
-            organizationRepository.Save();
-        }
     }
 }
+   
+}
+
