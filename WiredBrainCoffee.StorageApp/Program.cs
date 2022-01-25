@@ -59,9 +59,22 @@ namespace WiredBrainCoffee.StorageApp
 
         private static void AddOrganizations(IRepository<Organization> organizationRepository)
         {
-            organizationRepository.Add(new Organization { Name = "Pluralsight" });
-            organizationRepository.Add(new Organization { Name = "SomeCoffeeBeanPlace" });
-            organizationRepository.Add(new Organization { Name = "The Business" });
+            var organizations = new[]
+            {
+                new Organization {Name = "Pliralsight"},
+                new Organization { Name = "SomeCoffeeBeanPlace" },
+                new Organization { Name = "The Business" }
+            };
+            AddBatch(organizationRepository, organizations);
+            
+        }
+
+        private static void AddBatch(IRepository<Organization> organizationRepository, Organization[] organizations)
+        {
+            foreach (var item in organizations)
+            {
+                organizationRepository.Add(item);
+            }
             organizationRepository.Save();
         }
     }
